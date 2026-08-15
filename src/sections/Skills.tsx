@@ -10,28 +10,35 @@ export default function Skills() {
             label="04 — Skills"
             title={
               <>
-                Tools &amp;
+                The tools
                 <br />
-                <em>craft.</em>
+                I work with.
               </>
             }
-            description="Technologies I can genuinely use and explain."
+            description="A practical stack built around AI, product thinking, and hands-on experimentation."
           />
 
-          <div className="grid gap-10 sm:grid-cols-2 md:grid-cols-3">
+          <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3">
             {Object.entries(skills).map(([category, items]) => (
-              <div key={category} className="flex flex-col gap-4">
-                <h3 className="font-mono text-xs tracking-[0.15em] text-brown uppercase">
+              <div
+                key={category}
+                className="rounded-[1.5rem] border border-grey-200 bg-white p-5 shadow-[0_10px_30px_rgba(0,0,0,0.02)]"
+              >
+                <h3 className="mb-4 font-mono text-[10px] tracking-[0.16em] text-grey-600 uppercase">
                   {category}
                 </h3>
+
                 {items.length > 0 ? (
-                  <ul className="flex flex-col gap-2">
+                  <div className="flex flex-wrap gap-2">
                     {items.map((skill) => (
-                      <li key={skill} className="text-sm text-grey-600">
+                      <span
+                        key={skill}
+                        className="rounded-full border border-grey-200 bg-grey-100 px-2.5 py-1.5 font-mono text-[9px] tracking-[0.12em] text-grey-600 uppercase"
+                      >
                         {skill}
-                      </li>
+                      </span>
                     ))}
-                  </ul>
+                  </div>
                 ) : (
                   <p className="text-sm text-grey-400 italic">
                     Add skills in src/data/skills.ts

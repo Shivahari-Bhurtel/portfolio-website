@@ -4,7 +4,7 @@ import ProjectItem from "../components/ProjectItem.tsx";
 import SectionHeading from "../components/SectionHeading";
 
 export default function Projects() {
-  const [expandedId, setExpandedId] = useState<string | null>(null);
+  const [expandedId, setExpandedId] = useState<string | null>("01");
 
   return (
     <section id="projects" className="bg-warm-white">
@@ -14,9 +14,9 @@ export default function Projects() {
             label="03 — Projects"
             title={
               <>
-                Selected
+                Built to
                 <br />
-                <em>work.</em>
+                solve real problems.
               </>
             }
           />

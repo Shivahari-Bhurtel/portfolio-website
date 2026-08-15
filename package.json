@@ -1,7 +1,9 @@
 {
-  "name": "website",
+  "name": "shivahari-portfolio",
+  "description": "A modern, minimalist portfolio website built with React, TypeScript, and Vite",
+  "author": "Shivahari Bhurtel",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",

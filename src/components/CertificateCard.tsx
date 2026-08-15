@@ -21,7 +21,7 @@ export default function CertificateCard({ certificate }: CertificateCardProps) {
       onMouseLeave={() => setHovered(false)}
     >
       <div className="flex flex-col gap-1">
-        <h3 className="text-base leading-snug font-medium text-near-black">
+        <h3 className="text-base font-medium leading-snug text-near-black">
           {certificate.name}
         </h3>
         <p className="text-sm text-grey-500">{certificate.organization}</p>
@@ -31,11 +31,11 @@ export default function CertificateCard({ certificate }: CertificateCardProps) {
           {certificate.year}
         </span>
         <span
-          className={`font-mono text-xs tracking-wider transition-colors ${
-            hovered ? "text-brown" : "text-grey-300"
+          className={`font-mono text-xs tracking-[0.12em] uppercase transition-colors ${
+            hovered ? "text-grey-700" : "text-grey-400"
           }`}
         >
-          Verify →
+          View →
         </span>
       </div>
     </a>

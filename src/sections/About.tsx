@@ -14,27 +14,28 @@ export default function About() {
         <div className="grid gap-12 md:grid-cols-[280px_1fr] md:gap-20">
           <SectionHeading label="05 — About" title="" />
 
-          <div className="flex flex-col gap-10">
-            <div className="flex flex-col gap-6">
-              <h2 className="font-display text-[clamp(2.5rem,5vw,4.5rem)] leading-[1.1] font-light tracking-[-0.01em] text-off-white">
-                I'm Shivahari.
-              </h2>
+          <div
+            className="flex flex-col gap-10"
+            style={{ animation: "fadeInUp 0.8s ease-out both" }}
+          >
+            <div className="flex flex-col gap-7">
+              <div className="max-w-3xl space-y-5">
+                <p className="text-lg leading-relaxed text-grey-300 md:text-2xl md:leading-[1.7]">
+                  I’m Shivahari, and I like building things that make technology feel less
+                  abstract and more useful. The best products are not just smart — they are
+                  thoughtful, clear, and designed for the people using them.
+                </p>
 
-              <p className="max-w-xl text-base leading-relaxed text-grey-400 md:text-lg">
-                I'm an AI-focused student building my foundation in machine
-                learning, deep learning, and computer vision. I enjoy turning
-                what I learn into practical projects and continuously improving
-                through hands-on experimentation.
-              </p>
-
-              <p className="max-w-xl text-base leading-relaxed text-grey-400 md:text-lg">
-                Currently, I'm focused on strengthening my Python and machine
-                learning skills while exploring AI engineering and modern
-                software development.
-              </p>
+                <p className="text-base leading-relaxed text-grey-400 md:text-xl md:leading-[1.8]">
+                  My interest sits at the intersection of AI, software, and human-centered
+                  problem solving. I enjoy building systems that turn ideas into real-world
+                  experiences, whether that means intelligent tools, smooth interfaces, or
+                  products that quietly make life better.
+                </p>
+              </div>
             </div>
 
-            <div className="flex flex-wrap gap-6 border-t border-grey-700 pt-4">
+            <div className="flex flex-wrap gap-3 border-t border-grey-700 pt-5">
               {ABOUT_LINKS.map((link) => (
                 <a
                   key={link.label}
@@ -43,9 +44,8 @@ export default function About() {
                   rel={
                     link.href.startsWith("http") ? "noreferrer" : undefined
                   }
-                  className="group flex items-center gap-2 font-mono text-xs tracking-wider text-off-white uppercase transition-colors hover:text-brown-light"
+                  className="inline-flex items-center justify-center rounded-full border border-grey-600 bg-transparent px-4 py-2.5 font-mono text-[10px] font-medium tracking-[0.16em] text-white uppercase transition-all duration-200 hover:-translate-y-0.5 hover:border-white hover:bg-white hover:text-near-black"
                 >
-                  <span className="inline-block h-px w-4 bg-current transition-all duration-300 group-hover:w-6" />
                   {link.label}
                 </a>
               ))}

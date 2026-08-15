@@ -3,7 +3,7 @@ import type { ReactNode } from "react";
 interface SectionHeadingProps {
   /** Small mono label, e.g. "02 — Certificates" */
   label: string;
-  /** Serif heading. Wrap the last word in <em> in the caller for the italic accent look. */
+  /** Straight heading text without slanted accents. */
   title: ReactNode;
   /** Optional one-line description under the heading */
   description?: string;
@@ -23,7 +23,7 @@ export default function SectionHeading({
       <span className="font-mono text-xs tracking-[0.18em] uppercase text-brown">
         {label}
       </span>
-      <h2 className="font-display text-[clamp(2rem,4vw,3rem)] font-light leading-[1.1] text-near-black">
+      <h2 className="font-display text-[clamp(2rem,4vw,3rem)] font-black leading-[1.1] text-near-black">
         {title}
       </h2>
       {description && (

@@ -8,15 +8,15 @@ export default function Certificates() {
       <div className="mx-auto max-w-[1200px] px-6 py-24 md:px-10 md:py-32">
         <div className="grid gap-12 md:grid-cols-[280px_1fr] md:gap-20">
           <SectionHeading
-            label="02 — Certificates"
+            label="02 — Learning"
             title={
               <>
-                Verified
+                Skills I
                 <br />
-                <em>learning.</em>
+                keep building.
               </>
             }
-            description="A curated record of completed courses and certifications."
+            description="Milestones that sharpened my foundation in software, tools, and problem-solving."
           />
 
           <div className="flex flex-col border-t border-grey-200">

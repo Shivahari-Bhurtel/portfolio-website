@@ -4,9 +4,9 @@ export const projects: Project[] = [
   {
     id: "01",
     name: "TB Chest X-ray Screening",
-    category: "Computer Vision",
+    category: "Healthcare AI",
     description:
-      "A tuberculosis screening project using CNN-based transfer learning with MobileNetV2 to classify chest X-ray images.",
+      "Built a computer vision workflow to help screen chest X-rays for tuberculosis using transfer learning and medical image preprocessing. The goal was to create a simple, practical diagnostic support system with clear, interpretable model behavior.",
     technologies: [
       "Python",
       "TensorFlow",
@@ -25,7 +25,7 @@ export const projects: Project[] = [
     name: "Dog Skin Disease Classification",
     category: "Computer Vision",
     description:
-      "A dog skin disease classification project using CNNs and EfficientNet transfer learning to classify skin disease images.",
+      "Developed a small-scale image classification system for identifying common dog skin conditions. The project focused on building a reliable visual recognition pipeline using CNNs and transfer learning for early, real-world screening support.",
     technologies: [
       "Python",
       "TensorFlow",
@@ -45,7 +45,7 @@ export const projects: Project[] = [
     name: "Student Final Grade Prediction",
     category: "Machine Learning",
     description:
-      "A machine learning project for predicting student final grades using classification models and evaluating their performance.",
+      "Explored predictive modeling to estimate student outcomes from academic patterns. This project applied data cleaning, feature selection, and model comparison to understand how machine learning can support decision-making in education.",
     technologies: [
       "Python",
       "Pandas",

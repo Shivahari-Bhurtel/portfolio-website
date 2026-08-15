@@ -1,5 +1,5 @@
 export const skills: Record<string, string[]> = {
-  "AI / Machine Learning": [
+  "AI & ML": [
     "Python",
     "Machine Learning",
     "Deep Learning",
@@ -13,18 +13,23 @@ export const skills: Record<string, string[]> = {
     "NumPy",
   ],
 
-  "Development": [
+  "Web & Software": [
+    "React",
+    "TypeScript",
+    "JavaScript",
+    "HTML",
+    "CSS",
     "Git",
     "GitHub",
     "Linux",
-    "HTML",
-    "CSS",
   ],
 
-  "Tools": [
+  "Workflow": [
     "VS Code",
     "Claude Code",
     "Jupyter Notebook",
     "Kaggle",
+    "Research",
+    "Problem Solving",
   ],
 };

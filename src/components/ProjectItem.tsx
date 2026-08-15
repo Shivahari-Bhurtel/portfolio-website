@@ -21,15 +21,15 @@ export default function ProjectItem({
         onClick={onToggle}
         aria-expanded={isExpanded}
       >
-        <span className="w-10 shrink-0 pt-1 font-mono text-xs text-grey-400 md:pt-0">
+        <span className="w-10 shrink-0 pt-1 font-mono text-[10px] tracking-[0.14em] text-grey-400 md:pt-0">
           {project.id}
         </span>
         <div className="flex flex-1 flex-col gap-3 md:flex-row md:items-center md:justify-between">
-          <div className="flex flex-col gap-1">
-            <h3 className="text-lg font-medium text-near-black md:text-xl">
+          <div className="flex flex-col gap-2">
+            <h3 className="text-lg font-semibold tracking-[-0.03em] text-near-black md:text-[1.6rem]">
               {project.name}
             </h3>
-            <span className="font-mono text-xs tracking-[0.1em] text-brown">
+            <span className="font-mono text-[10px] tracking-[0.14em] uppercase text-grey-600">
               {project.category}
             </span>
           </div>
@@ -38,15 +38,15 @@ export default function ProjectItem({
               {project.technologies.slice(0, 3).map((tech) => (
                 <span
                   key={tech}
-                  className="border border-grey-300 px-2 py-1 font-mono text-xs text-grey-500"
+                  className="rounded-full border border-grey-300 px-2.5 py-1 font-mono text-[9px] uppercase tracking-[0.12em] text-grey-500"
                 >
                   {tech}
                 </span>
               ))}
             </div>
             <span
-              className={`inline-block shrink-0 font-mono text-sm text-grey-300 transition-transform duration-200 ${
-                isExpanded ? "rotate-45" : "rotate-0"
+              className={`inline-flex h-8 w-8 items-center justify-center rounded-full border border-grey-300 text-lg text-grey-500 transition-all duration-200 ${
+                isExpanded ? "rotate-45 border-near-black text-near-black" : "rotate-0"
               }`}
             >
               +
@@ -57,29 +57,30 @@ export default function ProjectItem({
 
       {/* Expanded detail */}
       {isExpanded && (
-        <div className="animate-[fadeIn_0.25s_ease] grid gap-8 pb-10 pl-[3.5rem] md:grid-cols-2 md:gap-12">
+        <div className="animate-[fadeIn_0.25s_ease] grid gap-8 pb-10 pl-[3.5rem] md:grid-cols-[1.1fr_1fr] md:gap-12">
           <div className="flex flex-col gap-5">
-            <p className="text-sm leading-relaxed text-grey-600">
+            <p className="text-sm leading-relaxed text-grey-600 md:text-base">
               {project.description}
             </p>
+
             <div className="flex flex-wrap gap-2">
               {project.technologies.map((tech) => (
                 <span
                   key={tech}
-                  className="border border-grey-300 px-2 py-1 font-mono text-xs text-grey-500"
+                  className="rounded-full border border-grey-300 px-2.5 py-1 font-mono text-[9px] uppercase tracking-[0.12em] text-grey-500"
                 >
                   {tech}
                 </span>
               ))}
             </div>
-            <div className="flex items-center gap-6 pt-2">
+
+            <div className="flex items-center gap-3 pt-2">
               <a
                 href={project.github}
                 target="_blank"
                 rel="noreferrer"
-                className="group flex items-center gap-2 font-mono text-xs tracking-wider text-near-black uppercase"
+                className="inline-flex items-center justify-center rounded-full border border-near-black bg-near-black px-4 py-2 font-mono text-[10px] font-medium tracking-[0.14em] uppercase text-white transition-all duration-200 hover:-translate-y-0.5 hover:bg-white hover:text-near-black"
               >
-                <span className="inline-block h-px w-4 bg-current transition-all duration-300 group-hover:w-6" />
                 GitHub
               </a>
               {project.demo && (
@@ -87,20 +88,19 @@ export default function ProjectItem({
                   href={project.demo}
                   target="_blank"
                   rel="noreferrer"
-                  className="group flex items-center gap-2 font-mono text-xs tracking-wider text-brown uppercase"
+                  className="inline-flex items-center justify-center rounded-full border border-grey-300 bg-white px-4 py-2 font-mono text-[10px] font-medium tracking-[0.14em] uppercase text-near-black transition-all duration-200 hover:-translate-y-0.5 hover:border-near-black"
                 >
-                  <span className="inline-block h-px w-4 bg-current transition-all duration-300 group-hover:w-6" />
                   Live Demo
                 </a>
               )}
             </div>
           </div>
 
-          <div className="aspect-16/10 overflow-hidden border border-grey-200">
+          <div className="overflow-hidden rounded-[1.25rem] border border-grey-200 bg-grey-100">
             <img
               src={`/images/projects/${project.image}`}
               alt={project.imageAlt}
-              className="block h-full w-full object-cover transition-transform duration-500 hover:scale-105"
+              className="block h-full w-full object-cover transition-transform duration-500 hover:scale-[1.03]"
             />
           </div>
         </div>

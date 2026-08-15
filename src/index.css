@@ -1,29 +1,23 @@
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400&family=Inter:wght@300;400;500;600&family=DM+Mono:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700;800&display=swap');
 @import "tailwindcss";
 
-/* ---------------------------------------------------------
-   Design tokens
-   These become Tailwind classes automatically, e.g.
-   --color-warm-white  ->  bg-warm-white / text-warm-white
-   --font-display       ->  font-display
---------------------------------------------------------- */
 @theme {
-  --font-display: 'Fraunces', Georgia, serif;
-  --font-body: 'Inter', system-ui, sans-serif;
-  --font-mono: 'DM Mono', monospace;
+  --font-display: 'Comic Sans MS', 'Comic Sans', 'Comic Neue', 'Trebuchet MS', sans-serif;
+  --font-body: 'Comic Sans MS', 'Comic Sans', 'Comic Neue', 'Trebuchet MS', sans-serif;
+  --font-mono: 'Comic Sans MS', 'Comic Sans', 'Comic Neue', 'Trebuchet MS', sans-serif;
 
-  --color-warm-white: #f7f4f0;
-  --color-off-white: #faf8f5;
-  --color-near-black: #141210;
-  --color-brown: #7c5c3e;
-  --color-brown-light: #a07850;
-  --color-grey-100: #f0ede9;
-  --color-grey-200: #e2ddd8;
-  --color-grey-300: #c8c2bb;
-  --color-grey-400: #a39890;
-  --color-grey-500: #7a7068;
-  --color-grey-600: #504844;
-  --color-grey-700: #302c29;
+  /* Minimalist monochrome palette */
+  --color-warm-white: #f5f5f3;
+  --color-off-white: #efefed;
+  --color-near-black: #101010;
+
+  --color-grey-100: #f7f7f5;
+  --color-grey-200: #d9d9d4;
+  --color-grey-300: #b7b7b2;
+  --color-grey-400: #8d8d88;
+  --color-grey-500: #5f5f5a;
+  --color-grey-600: #353532;
+  --color-grey-700: #1b1b1a;
 }
 
 * {
@@ -33,40 +27,90 @@
 html {
   scroll-behavior: smooth;
   scrollbar-width: thin;
-  scrollbar-color: var(--color-grey-300) transparent;
+  scrollbar-color: #333333 #f5f5f3;
 }
 
 body {
+  margin: 0;
   font-family: var(--font-body);
-  background-color: var(--color-warm-white);
-  color: var(--color-near-black);
+  background: linear-gradient(180deg, #f5f5f3 0%, #efefed 100%);
+  color: #101010;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-weight: 700;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  font-style: normal;
+}
+
+p,
+li,
+a,
+span {
+  letter-spacing: -0.01em;
+  font-style: normal;
 }
 
 ::selection {
-  background-color: var(--color-brown);
-  color: var(--color-off-white);
+  background: #101010;
+  color: #ffffff;
 }
 
-/* Smooth hover transitions for interactive elements */
 a,
-button {
+button,
+img {
   transition:
     color 0.2s ease,
     opacity 0.2s ease,
     border-color 0.2s ease,
-    background-color 0.2s ease;
+    background-color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    filter 0.2s ease;
 }
 
-/* Fade-in used when a project accordion row expands */
-@keyframes fadeIn {
+@keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateY(-6px);
+    transform: translateY(18px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
   }
 }
