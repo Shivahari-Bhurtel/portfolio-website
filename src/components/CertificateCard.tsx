@@ -14,30 +14,34 @@ export default function CertificateCard({ certificate }: CertificateCardProps) {
       href={certificate.link}
       target="_blank"
       rel="noreferrer"
-      className={`group -mx-4 flex cursor-pointer items-start justify-between gap-6 border-b border-grey-200 px-4 py-6 transition-colors ${
-        hovered ? "bg-grey-100" : "bg-transparent"
+      className={`certificate-row group grid w-full cursor-pointer gap-3 rounded-[1.25rem] border-b border-grey-200 px-4 py-5 transition-all duration-250 ease-out md:grid-cols-[minmax(0,1fr)_auto_auto] md:items-center md:gap-8 ${
+        hovered
+          ? "-translate-y-[2px] border-grey-300 bg-grey-100 shadow-[0_10px_24px_rgba(0,0,0,0.03)]"
+          : "bg-transparent"
       }`}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
-      <div className="flex flex-col gap-1">
-        <h3 className="text-base font-medium leading-snug text-near-black">
+      <div className="min-w-0">
+        <h3 className="truncate text-base font-medium leading-snug text-near-black transition-colors duration-200 group-hover:text-grey-700 md:text-lg">
           {certificate.name}
         </h3>
-        <p className="text-sm text-grey-500">{certificate.organization}</p>
+        <p className="mt-1 text-sm text-grey-500 transition-colors duration-200 group-hover:text-grey-600">
+          {certificate.organization}
+        </p>
       </div>
-      <div className="flex shrink-0 flex-col items-end gap-2 pt-0.5">
-        <span className="font-mono text-xs text-grey-400">
-          {certificate.year}
-        </span>
-        <span
-          className={`font-mono text-xs tracking-[0.12em] uppercase transition-colors ${
-            hovered ? "text-grey-700" : "text-grey-400"
-          }`}
-        >
-          View →
-        </span>
-      </div>
+
+      <span className="font-mono text-[10px] tracking-[0.14em] text-grey-400 uppercase transition-colors duration-200 group-hover:text-grey-500 md:justify-self-end">
+        {certificate.year}
+      </span>
+
+      <span
+        className={`inline-flex items-center justify-center font-mono text-[10px] tracking-[0.14em] uppercase transition-all duration-200 md:justify-self-end ${
+          hovered ? "translate-x-1 text-grey-700" : "translate-x-0 text-grey-400"
+        }`}
+      >
+        View <span aria-hidden="true" className="ml-1">→</span>
+      </span>
     </a>
   );
 }

@@ -19,7 +19,7 @@ export default function SectionHeading({
   description,
 }: SectionHeadingProps) {
   return (
-    <div className="flex flex-col gap-4">
+    <div className="section-intro flex flex-col gap-4 md:pt-2">
       <span className="font-mono text-xs tracking-[0.18em] uppercase text-brown">
         {label}
       </span>

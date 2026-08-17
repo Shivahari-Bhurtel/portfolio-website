@@ -7,8 +7,8 @@ export default function Projects() {
   const [expandedId, setExpandedId] = useState<string | null>("01");
 
   return (
-    <section id="projects" className="bg-warm-white">
-      <div className="mx-auto max-w-[1200px] px-6 py-24 md:px-10 md:py-32">
+    <section id="projects" className="bg-warm-white min-h-screen">
+      <div className="section-panel mx-auto w-full max-w-[1200px] px-6 py-24 md:px-10 md:py-32">
         <div className="mb-16">
           <SectionHeading
             label="03 — Projects"
@@ -23,10 +23,11 @@ export default function Projects() {
         </div>
 
         <div className="flex flex-col border-t border-grey-200">
-          {projects.map((project) => (
+          {projects.map((project, index) => (
             <ProjectItem
               key={project.id}
               project={project}
+              index={index}
               isExpanded={expandedId === project.id}
               onToggle={() =>
                 setExpandedId(expandedId === project.id ? null : project.id)

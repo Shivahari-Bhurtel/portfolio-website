@@ -1,8 +1,9 @@
 const NAV_LINKS = [
-  { label: "About", href: "#dashboard" },
+  { label: "Dashboard", href: "#dashboard" },
   { label: "Certificates", href: "#certificates" },
   { label: "Projects", href: "#projects" },
   { label: "Skills", href: "#skills" },
+  { label: "About", href: "#about" },
 ];
 
 export default function Navbar() {

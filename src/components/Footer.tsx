@@ -5,14 +5,15 @@ const FOOTER_LINKS = [
 ];
 
 export default function Footer() {
-  const year = new Date().getFullYear();
-
   return (
     <footer className="border-t border-grey-700 bg-near-black">
       <div className="mx-auto flex max-w-[1200px] flex-col items-start justify-between gap-4 px-6 py-8 sm:flex-row sm:items-center md:px-10">
-        <span className="font-display text-sm font-bold text-white not-italic">
+        <a
+          href="#dashboard"
+          className="font-display text-sm font-bold text-white not-italic transition-colors hover:text-grey-300"
+        >
           Shivahari.
-        </span>
+        </a>
 
         <div className="flex flex-wrap items-center gap-5">
           {FOOTER_LINKS.map((link) => (
@@ -29,7 +30,7 @@ export default function Footer() {
         </div>
 
         <span className="font-mono text-[10px] tracking-[0.12em] text-grey-500 uppercase">
-          © {year} Shivahari
+          Shivahari
         </span>
       </div>
     </footer>
