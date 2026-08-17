@@ -10,37 +10,37 @@ export default function Dashboard() {
   return (
     <section
       id="dashboard"
-      className="relative flex min-h-screen flex-col justify-center overflow-hidden bg-warm-white pt-14"
+      className="relative flex min-h-screen flex-col justify-center overflow-hidden bg-warm-white pt-12 sm:pt-14"
     >
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute -left-24 top-16 h-72 w-72 rounded-full bg-grey-200/70 blur-3xl" />
         <div className="absolute right-0 top-20 h-96 w-96 rounded-full bg-grey-300/60 blur-3xl" />
       </div>
 
-      <div className="relative mx-auto w-full max-w-[1200px] px-6 md:px-10">
-        <div className="grid items-center gap-12 py-16 md:grid-cols-[1.15fr_1fr] md:gap-16 md:py-24">
+      <div className="relative mx-auto w-full max-w-[1200px] px-4 sm:px-6 md:px-10">
+        <div className="grid items-center gap-8 py-12 sm:gap-12 sm:py-16 md:grid-cols-[1.15fr_1fr] md:gap-16 md:py-24">
           <div
-            className="flex flex-col gap-7"
+            className="flex flex-col gap-5 sm:gap-7"
             style={{ animation: "fadeInLeft 0.7s ease-out both" }}
           >
-            <span className="font-mono text-[10px] font-medium tracking-[0.18em] text-grey-600 uppercase">
+            <span className="font-mono text-[9px] font-medium tracking-[0.16em] text-grey-600 uppercase sm:text-[10px]">
               AI Engineer
             </span>
 
             <div className="space-y-2">
-              <h1 className="font-display text-[clamp(3.5rem,9vw,8.5rem)] leading-[0.85] font-black tracking-[-0.05em] text-near-black">
+              <h1 className="font-display text-[clamp(2.9rem,14vw,8.5rem)] leading-[0.86] font-black tracking-[-0.05em] text-near-black">
                 Hi, I'm
                 <br />
                 <span className="not-italic">Shiv.</span>
               </h1>
             </div>
 
-            <p className="max-w-xl text-base leading-relaxed text-grey-600 md:text-lg">
+            <p className="max-w-xl text-sm leading-relaxed text-grey-600 sm:text-base md:text-lg">
               I build thoughtful software, useful AI experiences, and practical ideas
               that feel human — not just clever. If it helps people, I’m in.
             </p>
 
-            <div className="flex flex-wrap items-center gap-3 pt-2">
+            <div className="flex flex-wrap items-center gap-2.5 pt-1 sm:gap-3 sm:pt-2">
               {DASHBOARD_LINKS.map((link) => (
                 <a
                   key={link.label}
@@ -49,7 +49,7 @@ export default function Dashboard() {
                   rel={
                     link.href.startsWith("http") ? "noreferrer" : undefined
                   }
-                  className="inline-flex items-center justify-center rounded-full border border-grey-300 bg-white/90 px-4 py-2.5 font-mono text-[10px] font-medium tracking-[0.16em] text-near-black uppercase shadow-[0_10px_30px_rgba(0,0,0,0.04)] transition-all duration-200 hover:-translate-y-0.5 hover:border-near-black hover:shadow-[0_12px_28px_rgba(0,0,0,0.08)]"
+                  className="inline-flex items-center justify-center rounded-full border border-grey-300 bg-white/90 px-3.5 py-2.5 font-mono text-[9px] font-medium tracking-[0.14em] text-near-black uppercase shadow-[0_10px_30px_rgba(0,0,0,0.04)] transition-all duration-200 hover:-translate-y-0.5 hover:border-near-black hover:shadow-[0_12px_28px_rgba(0,0,0,0.08)] sm:px-4 sm:text-[10px]"
                 >
                   {link.label}
                 </a>
@@ -64,7 +64,7 @@ export default function Dashboard() {
             <img
               src={PROFILE_IMAGE_SRC}
               alt="Shivahari"
-              className="block h-[clamp(320px,32vw,420px)] w-[clamp(320px,32vw,420px)] rounded-[2rem] object-cover object-center shadow-[0_30px_80px_rgba(0,0,0,0.10)] transition-transform duration-300 hover:scale-[1.01]"
+              className="block h-[clamp(260px,68vw,420px)] w-[clamp(260px,68vw,420px)] rounded-[2rem] object-cover object-center shadow-[0_30px_80px_rgba(0,0,0,0.10)] transition-transform duration-300 hover:scale-[1.01]"
             />
           </div>
         </div>

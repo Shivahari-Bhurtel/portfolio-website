@@ -4,8 +4,8 @@ import SectionHeading from "../components/SectionHeading";
 export default function Skills() {
   return (
     <section id="skills" className="bg-off-white min-h-screen">
-      <div className="section-panel mx-auto w-full max-w-[1200px] px-6 py-24 md:px-10 md:py-32">
-        <div className="grid gap-12 md:grid-cols-[280px_1fr] md:gap-20">
+      <div className="section-panel mx-auto w-full max-w-[1200px] px-4 py-20 sm:px-6 md:px-10 md:py-32">
+        <div className="grid gap-8 sm:gap-12 md:grid-cols-[280px_1fr] md:gap-20">
           <SectionHeading
             label="04 — Skills"
             title={

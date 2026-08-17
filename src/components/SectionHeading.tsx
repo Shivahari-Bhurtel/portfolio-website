@@ -20,10 +20,10 @@ export default function SectionHeading({
 }: SectionHeadingProps) {
   return (
     <div className="section-intro flex flex-col gap-4 md:pt-2">
-      <span className="font-mono text-xs tracking-[0.18em] uppercase text-brown">
+      <span className="font-mono text-[10px] tracking-[0.18em] uppercase text-grey-600 sm:text-xs">
         {label}
       </span>
-      <h2 className="font-display text-[clamp(2rem,4vw,3rem)] font-black leading-[1.1] text-near-black">
+      <h2 className="font-display text-[clamp(2.1rem,8vw,3rem)] font-black leading-[1.1] text-near-black">
         {title}
       </h2>
       {description && (

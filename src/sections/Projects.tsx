@@ -8,8 +8,8 @@ export default function Projects() {
 
   return (
     <section id="projects" className="bg-warm-white min-h-screen">
-      <div className="section-panel mx-auto w-full max-w-[1200px] px-6 py-24 md:px-10 md:py-32">
-        <div className="mb-16">
+      <div className="section-panel mx-auto w-full max-w-[1200px] px-4 py-20 sm:px-6 md:px-10 md:py-32">
+        <div className="mb-12 sm:mb-16">
           <SectionHeading
             label="03 — Projects"
             title={
