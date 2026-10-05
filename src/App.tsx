@@ -5,8 +5,12 @@ import About from "./sections/About.tsx";
 import Certificates from "./sections/Certificates.tsx";
 import Projects from "./sections/Projects.tsx";
 import Skills from "./sections/Skills.tsx";
+import Contact from "./sections/Contact.tsx";
+import { useScrollReveal } from "./hooks/useScrollReveal.ts";
 
 function App() {
+  useScrollReveal();
+
   return (
     <div className="font-body">
       <Navbar />
@@ -15,6 +19,7 @@ function App() {
       <Projects />
       <Skills />
       <About />
+      <Contact />
       <Footer />
     </div>
   );

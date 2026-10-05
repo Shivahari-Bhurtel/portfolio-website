@@ -16,9 +16,8 @@ export default function About() {
 
           <div
             className="flex flex-col gap-10"
-            style={{ animation: "fadeInUp 0.8s ease-out both" }}
           >
-            <div className="flex flex-col gap-7">
+            <div className="flex flex-col gap-7" data-reveal>
               <div className="max-w-3xl space-y-5">
                 <p className="text-lg leading-relaxed text-grey-300 md:text-2xl md:leading-[1.7]">
                   I’m Shivahari, and I like building things that make technology feel less
@@ -35,7 +34,7 @@ export default function About() {
               </div>
             </div>
 
-            <div className="flex flex-wrap gap-3 border-t border-grey-700 pt-5">
+            <div className="flex flex-wrap gap-3 border-t border-grey-700 pt-5" data-reveal>
               {ABOUT_LINKS.map((link) => (
                 <a
                   key={link.label}

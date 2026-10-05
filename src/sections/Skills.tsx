@@ -1,9 +1,10 @@
 import { skills } from "../data/skills.ts";
 import SectionHeading from "../components/SectionHeading";
+import SkillLogo from "../components/SkillLogo.tsx";
 
 export default function Skills() {
   return (
-    <section id="skills" className="bg-off-white min-h-screen">
+    <section id="skills" className="min-h-screen">
       <div className="section-panel mx-auto w-full max-w-[1200px] px-4 py-20 sm:px-6 md:px-10 md:py-32">
         <div className="grid gap-8 sm:gap-12 md:grid-cols-[280px_1fr] md:gap-20">
           <SectionHeading
@@ -22,6 +23,7 @@ export default function Skills() {
             {Object.entries(skills).map(([category, items], categoryIndex) => (
               <div
                 key={category}
+                data-reveal
                 className="skill-card rounded-[1.5rem] border border-grey-200 bg-white p-5 shadow-[0_10px_30px_rgba(0,0,0,0.02)]"
                 style={{ animationDelay: `${categoryIndex * 90}ms` }}
               >
@@ -30,14 +32,17 @@ export default function Skills() {
                 </h3>
 
                 {items.length > 0 ? (
-                  <div className="flex flex-wrap gap-2">
+                  <div className="grid grid-cols-2 gap-2">
                     {items.map((skill) => (
-                      <span
+                      <div
                         key={skill}
-                        className="skill-pill rounded-full border border-grey-200 bg-grey-100 px-2.5 py-1.5 font-mono text-[9px] tracking-[0.12em] text-grey-600 uppercase transition-all duration-200"
+                        className="skill-item flex min-h-[4.25rem] min-w-0 items-center gap-2 rounded-xl border border-grey-200/80 bg-[#f8faf7] p-2"
                       >
-                        {skill}
-                      </span>
+                        <SkillLogo name={skill} />
+                        <span className="line-clamp-2 text-[10px] font-medium leading-snug text-grey-700 sm:text-[11px]">
+                          {skill}
+                        </span>
+                      </div>
                     ))}
                   </div>
                 ) : (

@@ -7,23 +7,40 @@ const DASHBOARD_LINKS = [
 ];
 
 export default function Dashboard() {
+  function handlePortraitPointerMove(event: React.PointerEvent<HTMLDivElement>) {
+    if (
+      event.pointerType !== "mouse" ||
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    ) {
+      return;
+    }
+
+    const bounds = event.currentTarget.getBoundingClientRect();
+    const pointerX = (event.clientX - bounds.left) / bounds.width - 0.5;
+    const pointerY = (event.clientY - bounds.top) / bounds.height - 0.5;
+    event.currentTarget.style.setProperty("--tilt-x", `${-pointerY * 10}deg`);
+    event.currentTarget.style.setProperty("--tilt-y", `${pointerX * 12}deg`);
+  }
+
+  function resetPortraitTilt(event: React.PointerEvent<HTMLDivElement>) {
+    event.currentTarget.style.setProperty("--tilt-x", "0deg");
+    event.currentTarget.style.setProperty("--tilt-y", "0deg");
+  }
+
   return (
     <section
       id="dashboard"
-      className="relative flex min-h-screen flex-col justify-center overflow-hidden bg-warm-white pt-12 sm:pt-14"
+      className="relative flex min-h-screen flex-col justify-center overflow-hidden bg-warm-white pt-12 text-near-black sm:pt-14"
     >
       <div className="pointer-events-none absolute inset-0">
-        <div className="absolute -left-24 top-16 h-72 w-72 rounded-full bg-grey-200/70 blur-3xl" />
-        <div className="absolute right-0 top-20 h-96 w-96 rounded-full bg-grey-300/60 blur-3xl" />
+        <div className="absolute -left-24 top-16 h-72 w-72 rounded-full bg-grey-200/50 blur-3xl" />
+        <div className="absolute right-0 top-20 h-96 w-96 rounded-full bg-mint/20 blur-3xl" />
       </div>
 
       <div className="relative mx-auto w-full max-w-[1200px] px-4 sm:px-6 md:px-10">
         <div className="grid items-center gap-8 py-12 sm:gap-12 sm:py-16 md:grid-cols-[1.15fr_1fr] md:gap-16 md:py-24">
-          <div
-            className="flex flex-col gap-5 sm:gap-7"
-            style={{ animation: "fadeInLeft 0.7s ease-out both" }}
-          >
-            <span className="font-mono text-[9px] font-medium tracking-[0.16em] text-grey-600 uppercase sm:text-[10px]">
+          <div className="hero-copy flex flex-col gap-5 sm:gap-7" data-reveal>
+            <span className="font-mono text-[9px] font-medium tracking-[0.16em] text-forest uppercase sm:text-[10px]">
               AI Engineer
             </span>
 
@@ -49,23 +66,32 @@ export default function Dashboard() {
                   rel={
                     link.href.startsWith("http") ? "noreferrer" : undefined
                   }
-                  className="inline-flex items-center justify-center rounded-full border border-grey-300 bg-white/90 px-3.5 py-2.5 font-mono text-[9px] font-medium tracking-[0.14em] text-near-black uppercase shadow-[0_10px_30px_rgba(0,0,0,0.04)] transition-all duration-200 hover:-translate-y-0.5 hover:border-near-black hover:shadow-[0_12px_28px_rgba(0,0,0,0.08)] sm:px-4 sm:text-[10px]"
+                  className="inline-flex items-center justify-center rounded-full border border-grey-300 bg-white px-3.5 py-2.5 font-mono text-[9px] font-medium tracking-[0.14em] text-near-black uppercase transition-all duration-200 hover:-translate-y-0.5 hover:border-forest hover:bg-forest hover:text-white sm:px-4 sm:text-[10px]"
                 >
                   {link.label}
                 </a>
               ))}
+              <a
+                href="#contact"
+                className="inline-flex items-center justify-center rounded-full border border-forest bg-forest px-3.5 py-2.5 font-mono text-[9px] font-medium tracking-[0.14em] text-white uppercase transition-all duration-200 hover:-translate-y-0.5 hover:border-near-black hover:bg-near-black sm:px-4 sm:text-[10px]"
+              >
+                Let’s talk
+              </a>
             </div>
           </div>
 
-          <div
-            className="relative flex items-center justify-center md:justify-end"
-            style={{ animation: "fadeInUp 0.9s ease-out both" }}
-          >
-            <img
-              src={PROFILE_IMAGE_SRC}
-              alt="Shivahari"
-              className="block h-[clamp(260px,68vw,420px)] w-[clamp(260px,68vw,420px)] rounded-[2rem] object-cover object-center shadow-[0_30px_80px_rgba(0,0,0,0.10)] transition-transform duration-300 hover:scale-[1.01]"
-            />
+          <div className="hero-portrait-frame relative flex items-center justify-center md:justify-end" data-reveal>
+            <div
+              className="hero-portrait-stage"
+              onPointerMove={handlePortraitPointerMove}
+              onPointerLeave={resetPortraitTilt}
+            >
+              <img
+                src={PROFILE_IMAGE_SRC}
+                alt="Shivahari"
+                className="hero-portrait block h-[clamp(260px,68vw,420px)] w-[clamp(260px,68vw,420px)] object-cover object-center"
+              />
+            </div>
           </div>
         </div>
       </div>

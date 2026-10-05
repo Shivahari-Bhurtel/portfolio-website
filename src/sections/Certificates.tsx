@@ -16,10 +16,10 @@ export default function Certificates() {
                 keep building.
               </>
             }
-            description="Milestones that sharpened my foundation in software, tools, and problem-solving."
+            description="A few milestones from my ongoing learning in AI, programming, and developer tools."
           />
 
-          <div className="flex flex-col gap-2 border-t border-grey-200 pt-2">
+          <div className="grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
             {certificates.map((certificate) => (
               <CertificateCard key={certificate.id} certificate={certificate} />
             ))}
