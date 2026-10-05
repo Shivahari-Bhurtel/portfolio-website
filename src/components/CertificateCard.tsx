@@ -18,24 +18,24 @@ export default function CertificateCard({ certificate }: CertificateCardProps) {
           />
         ) : (
           <div className="flex h-full items-center justify-center rounded-lg bg-white px-5 text-center">
-            <span className="font-mono text-xs tracking-[0.12em] text-grey-500 uppercase">Certificate preview unavailable</span>
+            <span className="font-body text-sm font-medium leading-snug text-grey-500">Certificate preview unavailable</span>
           </div>
         )}
-        <span className="pointer-events-none absolute left-5 top-5 rounded-full border border-grey-200 bg-white/90 px-3 py-1 font-mono text-[9px] tracking-[0.12em] text-forest uppercase shadow-sm">
+        <span className="pointer-events-none absolute left-5 top-5 rounded-full border border-grey-200 bg-white/90 px-3 py-1 font-body text-xs font-semibold tracking-[0.03em] text-forest shadow-sm">
           {certificate.year} · Certificate
         </span>
       </div>
 
       <div className="flex flex-col gap-4 p-5 sm:p-6">
         <div>
-          <h3 className="text-base font-semibold leading-snug text-near-black sm:text-lg">{certificate.name}</h3>
-          <p className="mt-1.5 text-sm text-grey-500">{certificate.organization}</p>
+          <h3 className="font-display text-lg font-bold leading-snug text-near-black sm:text-xl">{certificate.name}</h3>
+          <p className="mt-1.5 font-body text-sm leading-relaxed text-grey-500 sm:text-base">{certificate.organization}</p>
         </div>
         <a
           href={certificate.link}
           target="_blank"
           rel="noreferrer"
-          className="inline-flex w-fit items-center gap-2 rounded-full border border-forest/20 px-4 py-2.5 font-mono text-[10px] font-medium tracking-[0.12em] text-forest uppercase transition-colors hover:border-forest hover:bg-forest hover:text-white"
+          className="inline-flex w-fit items-center gap-2 rounded-full border border-forest/20 px-4 py-2.5 font-body text-sm font-semibold tracking-[0.01em] text-forest transition-colors hover:border-forest hover:bg-forest hover:text-white"
         >
           Verify credential <span aria-hidden="true">↗</span>
         </a>

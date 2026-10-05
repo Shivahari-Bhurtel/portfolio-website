@@ -23,19 +23,19 @@ export default function ProjectItem({
           loading="lazy"
           className="project-image h-full w-full object-cover"
         />
-        <span className="absolute left-4 top-4 rounded-full border border-white/60 bg-near-black/70 px-3 py-1.5 font-mono text-[9px] tracking-[0.12em] text-white uppercase backdrop-blur-sm">
+        <span className="absolute left-4 top-4 rounded-full border border-white/60 bg-near-black/70 px-3 py-1.5 font-body text-xs font-semibold tracking-[0.03em] text-white backdrop-blur-sm">
           Project {project.id}
         </span>
       </div>
 
       <div className="flex flex-1 flex-col p-5 sm:p-6">
-        <p className="font-mono text-[9px] tracking-[0.15em] text-forest uppercase">
+        <p className="font-body text-xs font-bold tracking-[0.04em] text-forest">
           {project.category}
         </p>
-        <h3 className="mt-3 text-xl font-semibold leading-tight tracking-[-0.04em] text-near-black sm:text-2xl">
+        <h3 className="mt-3 font-display text-2xl font-bold leading-tight tracking-[-0.03em] text-near-black sm:text-[1.75rem]">
           {project.name}
         </h3>
-        <p className="mt-3 line-clamp-3 text-sm leading-relaxed text-grey-600">
+        <p className="mt-3 line-clamp-3 font-body text-base leading-relaxed text-grey-600">
           {project.description}
         </p>
 
@@ -43,7 +43,7 @@ export default function ProjectItem({
           {project.technologies.slice(0, 3).map((tech) => (
             <span
               key={tech}
-              className="rounded-full bg-grey-100 px-2.5 py-1.5 font-mono text-[9px] tracking-[0.08em] text-grey-600 uppercase"
+              className="rounded-full bg-grey-100 px-3 py-1.5 font-body text-xs font-medium tracking-[0.01em] text-grey-600"
             >
               {tech}
             </span>
@@ -51,14 +51,14 @@ export default function ProjectItem({
         </div>
 
       <div id={detailsId} hidden={!isExpanded} className="project-details mt-5 border-t border-grey-200 pt-5">
-          <h4 className="font-mono text-[9px] tracking-[0.14em] text-grey-500 uppercase">
+          <h4 className="font-body text-xs font-bold tracking-[0.04em] text-grey-500">
             Built with
           </h4>
           <div className="mt-3 flex flex-wrap gap-2">
             {project.technologies.map((tech) => (
               <span
                 key={tech}
-                className="rounded-full border border-grey-200 px-2.5 py-1.5 font-mono text-[9px] tracking-[0.08em] text-grey-600 uppercase"
+                className="rounded-full border border-grey-200 px-3 py-1.5 font-body text-xs font-medium tracking-[0.01em] text-grey-600"
               >
                 {tech}
               </span>
@@ -69,7 +69,7 @@ export default function ProjectItem({
               href={project.github}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex min-h-10 items-center justify-center rounded-full bg-near-black px-4 py-2 font-mono text-[9px] font-medium tracking-[0.12em] text-white uppercase transition-colors hover:bg-forest"
+              className="inline-flex min-h-10 items-center justify-center rounded-full bg-near-black px-4 py-2 font-body text-sm font-semibold tracking-[0.01em] text-white transition-colors hover:bg-forest"
             >
               View source <span className="ml-2" aria-hidden="true">↗</span>
             </a>
@@ -78,7 +78,7 @@ export default function ProjectItem({
                 href={project.demo}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex min-h-10 items-center justify-center rounded-full border border-grey-300 px-4 py-2 font-mono text-[9px] font-medium tracking-[0.12em] text-near-black uppercase transition-colors hover:border-forest hover:text-forest"
+                className="inline-flex min-h-10 items-center justify-center rounded-full border border-grey-300 px-4 py-2 font-body text-sm font-semibold tracking-[0.01em] text-near-black transition-colors hover:border-forest hover:text-forest"
               >
                 Live demo <span className="ml-2" aria-hidden="true">↗</span>
               </a>
@@ -88,7 +88,7 @@ export default function ProjectItem({
 
         <button
           type="button"
-          className="project-toggle mt-6 flex w-full items-center justify-between border-t border-grey-200 pt-4 text-left font-mono text-[9px] font-medium tracking-[0.12em] text-grey-600 uppercase transition-colors hover:text-forest"
+          className="project-toggle mt-6 flex w-full items-center justify-between border-t border-grey-200 pt-4 text-left font-body text-sm font-semibold tracking-[0.01em] text-grey-600 transition-colors hover:text-forest"
           onClick={onToggle}
           aria-expanded={isExpanded}
           aria-controls={detailsId}

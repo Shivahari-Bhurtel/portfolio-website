@@ -10,19 +10,16 @@ export default function Projects() {
       <div className="section-panel mx-auto w-full max-w-[1200px] px-4 py-20 sm:px-6 md:px-10 md:py-28">
         <div className="mb-10 flex flex-col gap-6 sm:mb-14 xl:flex-row xl:items-end xl:justify-between">
           <div className="max-w-2xl" data-reveal>
-            <h2 className="font-display text-[clamp(2.4rem,7vw,4.5rem)] font-bold leading-[1.02] tracking-[-0.05em] text-near-black">
+            <h2 className="font-display text-[clamp(2.4rem,7vw,4.5rem)] font-black leading-[1.02] tracking-[-0.05em] text-near-black">
               Built with purpose.
               <br />
               <span className="text-forest">Made to matter.</span>
             </h2>
           </div>
           <div className="max-w-sm md:pb-1" data-reveal>
-            <p className="text-sm leading-relaxed text-grey-600 sm:text-base">
+            <p className="font-body text-base leading-relaxed text-grey-600 sm:text-lg">
               A selection of applied machine-learning projects, from medical
               imaging to tools that support everyday decisions.
-            </p>
-            <p className="mt-4 font-mono text-[10px] tracking-[0.14em] text-grey-500 uppercase">
-              {String(projects.length).padStart(2, "0")} projects <span aria-hidden="true">·</span> AI &amp; software
             </p>
           </div>
         </div>

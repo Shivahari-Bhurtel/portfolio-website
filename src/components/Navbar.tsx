@@ -6,14 +6,13 @@ const NAV_LINKS = [
   { label: "Projects", href: "#projects" },
   { label: "Skills", href: "#skills" },
   { label: "About", href: "#about" },
-  { label: "Contact", href: "#contact" },
 ];
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [theme, setTheme] = useState<"light" | "dark">(() => {
     if (typeof window === "undefined") return "light";
-    return window.localStorage.getItem("portfolio-theme") === "dark" ? "dark" : "light";
+    return window.localStorage.getItem("portfolio-theme") === "light" ? "light" : "dark";
   });
 
   useEffect(() => {
