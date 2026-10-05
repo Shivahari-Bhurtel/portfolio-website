@@ -83,9 +83,6 @@ export default function Contact() {
               >
                 Prepare email <span aria-hidden="true">↗</span>
               </button>
-              <span className="text-xs leading-relaxed text-white/45">
-                No data is stored on this website.
-              </span>
             </div>
             <p aria-live="polite" className="min-h-5 text-sm text-mint">
               {notice}

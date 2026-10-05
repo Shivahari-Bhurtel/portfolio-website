@@ -22,7 +22,7 @@ export default function Footer() {
               href={link.href}
               target="_blank"
               rel="noreferrer"
-              className="font-mono text-[10px] tracking-[0.14em] text-grey-400 uppercase transition-colors hover:text-white"
+              className="font-body text-sm font-semibold tracking-[0.01em] text-grey-300 transition-colors hover:text-white"
             >
               {link.label}
             </a>

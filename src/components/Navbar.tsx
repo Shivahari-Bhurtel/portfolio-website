@@ -12,7 +12,7 @@ export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [theme, setTheme] = useState<"light" | "dark">(() => {
     if (typeof window === "undefined") return "light";
-    return window.localStorage.getItem("portfolio-theme") === "light" ? "light" : "dark";
+    return window.localStorage.getItem("portfolio-theme") === "dark" ? "dark" : "light";
   });
 
   useEffect(() => {
