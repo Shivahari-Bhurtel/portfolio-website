@@ -42,7 +42,7 @@ export default function Dashboard() {
       </div>
 
       <div className="relative mx-auto w-full max-w-[1200px] px-4 sm:px-6 md:px-10">
-        <div className="grid items-center gap-8 py-12 sm:gap-12 sm:py-16 md:grid-cols-[1.15fr_1fr] md:gap-16 md:py-24">
+        <div className="grid items-center gap-8 py-12 sm:gap-12 sm:py-16 lg:grid-cols-[1.15fr_1fr] lg:gap-16 lg:py-24">
           <motion.div
             className="hero-copy flex flex-col gap-5 sm:gap-7"
             initial={prefersReducedMotion ? false : "hidden"}
@@ -79,7 +79,7 @@ export default function Dashboard() {
                 },
               }}
             >
-              <h1 className="font-display text-[clamp(2.9rem,14vw,8.5rem)] leading-[0.86] font-black tracking-[-0.05em] text-near-black">
+              <h1 className="font-display text-[clamp(3rem,9vw,8.5rem)] leading-[0.86] font-black tracking-[-0.05em] text-near-black">
                 Hi, I'm
                 <br />
                 <span className="not-italic">Shiv.</span>

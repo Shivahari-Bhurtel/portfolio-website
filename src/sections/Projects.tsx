@@ -8,7 +8,7 @@ export default function Projects() {
   return (
     <section id="projects" className="bg-off-white">
       <div className="section-panel mx-auto w-full max-w-[1200px] px-4 py-20 sm:px-6 md:px-10 md:py-28">
-        <div className="mb-10 flex flex-col gap-6 sm:mb-14 md:flex-row md:items-end md:justify-between">
+        <div className="mb-10 flex flex-col gap-6 sm:mb-14 xl:flex-row xl:items-end xl:justify-between">
           <div className="max-w-2xl" data-reveal>
             <span className="font-mono text-[10px] tracking-[0.18em] text-forest uppercase sm:text-xs">
               03 — Selected work

@@ -11,7 +11,7 @@ export default function About() {
   return (
     <section id="about" className="bg-near-black min-h-screen">
       <div className="section-panel mx-auto w-full max-w-[1200px] px-4 py-20 sm:px-6 md:px-10 md:py-36">
-        <div className="grid gap-8 sm:gap-12 md:grid-cols-[280px_1fr] md:gap-20">
+        <div className="grid gap-8 sm:gap-12 lg:grid-cols-[260px_1fr] lg:gap-16">
           <SectionHeading label="05 — About" title="" />
 
           <div

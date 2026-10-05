@@ -21,6 +21,22 @@
   --color-brown: #405046;
 }
 
+html[data-theme="dark"] {
+  color-scheme: dark;
+  --color-warm-white: #050907;
+  --color-off-white: #080f0a;
+  --color-near-black: #e8f0e9;
+  --color-forest: #a6d6b3;
+  --color-forest-light: #b7e4c7;
+  --color-grey-100: #202a23;
+  --color-grey-200: #303d34;
+  --color-grey-300: #46564b;
+  --color-grey-400: #9aaa9e;
+  --color-grey-500: #b2c0b5;
+  --color-grey-600: #c4d0c7;
+  --color-grey-700: #e0e9e2;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -45,6 +61,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
+  transition: background-color 300ms ease, color 300ms ease;
 }
 
 h1,
@@ -103,7 +120,7 @@ section::before {
   background-image: url("https://images.unsplash.com/photo-1493673272479-a20888bcee10?auto=format&fit=crop&w=1800&q=80");
   background-position: center;
   background-size: cover;
-  opacity: 0.22;
+  opacity: 0.12;
 }
 
 .section-panel {
@@ -185,7 +202,7 @@ footer {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   .section-intro {
     position: sticky;
     top: 110px;
@@ -208,6 +225,18 @@ footer {
 
   .section-intro.is-visible::after {
     transform: scaleX(1);
+  }
+}
+
+@media (min-width: 1536px) {
+  .section-panel.mx-auto {
+    max-width: 1320px;
+  }
+}
+
+@media (min-width: 1920px) {
+  .section-panel.mx-auto {
+    max-width: 1440px;
   }
 }
 
@@ -379,6 +408,127 @@ footer {
   font-size: 0.6rem;
   font-weight: 700;
   letter-spacing: -0.04em;
+}
+
+html[data-theme="dark"] body {
+  background: #040705;
+}
+
+html[data-theme="dark"] section {
+  background-color: #050907;
+}
+
+html[data-theme="dark"] section::before {
+  opacity: 0.035;
+}
+
+html[data-theme="dark"] #certificates,
+html[data-theme="dark"] #projects,
+html[data-theme="dark"] #skills {
+  background: linear-gradient(145deg, #09120b 0%, #040705 76%);
+}
+
+html[data-theme="dark"] .bg-white {
+  background-color: #202a23;
+}
+
+html[data-theme="dark"] .bg-near-black {
+  background-color: #030504;
+}
+
+html[data-theme="dark"] .bg-forest {
+  background-color: #0a1a10;
+}
+
+html[data-theme="dark"] .bg-mint.text-near-black {
+  color: #0b1510;
+}
+
+html[data-theme="dark"] header {
+  background-image: none;
+}
+
+html[data-theme="dark"] footer {
+  background-image:
+    linear-gradient(rgba(3, 6, 4, 0.96), rgba(3, 6, 4, 0.98)),
+    url("https://images.unsplash.com/photo-1493673272479-a20888bcee10?auto=format&fit=crop&w=1800&q=80");
+}
+
+.forest-torch {
+  position: fixed;
+  z-index: 40;
+  top: 0;
+  left: 0;
+  width: 520px;
+  height: 520px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(187, 224, 164, 0.13) 0%,
+    rgba(105, 157, 91, 0.09) 22%,
+    rgba(68, 113, 62, 0.045) 42%,
+    transparent 72%
+  );
+  opacity: 0;
+  pointer-events: none;
+  transform: translate3d(-999px, -999px, 0);
+  transition: opacity 500ms ease, transform 140ms ease-out;
+  will-change: transform;
+}
+
+html[data-theme="dark"] .forest-torch {
+  opacity: 1;
+}
+
+@media (max-width: 767px) {
+  .forest-torch {
+    width: 390px;
+    height: 390px;
+    background: radial-gradient(
+      circle,
+      rgba(187, 224, 164, 0.11) 0%,
+      rgba(105, 157, 91, 0.065) 26%,
+      rgba(68, 113, 62, 0.03) 46%,
+      transparent 72%
+    );
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .forest-torch {
+    transition: opacity 500ms ease;
+    will-change: auto;
+  }
+}
+
+html[data-theme="dark"] .certificate-card {
+  background-color: #101912;
+  border-color: #26382b;
+}
+
+html[data-theme="dark"] .project-card {
+  background-color: #101912;
+  border-color: #26382b;
+}
+
+html[data-theme="dark"] .project-card:hover {
+  border-color: #718778;
+}
+
+html[data-theme="dark"] .project-card .bg-grey-100 {
+  color: #d4e0d6;
+}
+
+html[data-theme="dark"] .certificate-preview iframe {
+  background: #f7f8f5;
+}
+
+html[data-theme="dark"] .skill-card {
+  background-color: #0b130e;
+}
+
+html[data-theme="dark"] .section-intro::after {
+  background: rgba(183, 228, 199, 0.24);
 }
 
 button,

@@ -20,7 +20,7 @@ export default function Contact() {
   return (
     <section id="contact" className="bg-forest text-white">
       <div className="section-panel mx-auto w-full max-w-[1200px] px-4 py-20 sm:px-6 md:px-10 md:py-32">
-        <div className="grid gap-10 md:grid-cols-[0.9fr_1.1fr] md:items-center md:gap-20">
+        <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:gap-20">
           <div className="flex flex-col gap-5" data-reveal>
             <span className="font-mono text-[10px] tracking-[0.18em] text-mint uppercase sm:text-xs">
               06 — Contact

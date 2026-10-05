@@ -18,7 +18,7 @@ export default function Skills() {
             </p>
           </div>
 
-          <div className="grid items-start gap-6 sm:grid-cols-2 md:grid-cols-3">
+          <div className="grid items-start gap-6 sm:grid-cols-2 xl:grid-cols-3">
             {Object.entries(skills).map(([category, items], categoryIndex) => (
               <div
                 key={category}
