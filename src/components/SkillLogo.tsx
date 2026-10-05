@@ -2,26 +2,53 @@ interface SkillLogoProps {
   name: string;
 }
 
-const BRAND_LOGOS: Record<string, { slug: string; color: string }> = {
-  Python: { slug: "python", color: "3776AB" },
-  TensorFlow: { slug: "tensorflow", color: "FF6F00" },
-  Keras: { slug: "keras", color: "D00000" },
-  "Scikit-learn": { slug: "scikitlearn", color: "F7931E" },
-  Pandas: { slug: "pandas", color: "150458" },
-  NumPy: { slug: "numpy", color: "013243" },
-  React: { slug: "react", color: "149ECA" },
-  TypeScript: { slug: "typescript", color: "3178C6" },
-  JavaScript: { slug: "javascript", color: "D6B800" },
-  HTML: { slug: "html5", color: "E34F26" },
-  CSS: { slug: "css3", color: "1572B6" },
-  Git: { slug: "git", color: "F05032" },
-  GitHub: { slug: "github", color: "181717" },
-  Linux: { slug: "linux", color: "FCC624" },
-  "VS Code": { slug: "visualstudiocode", color: "007ACC" },
-  "Claude Code": { slug: "claude", color: "D97757" },
-  "Jupyter Notebook": { slug: "jupyter", color: "F37626" },
-  Kaggle: { slug: "kaggle", color: "20BEFF" },
+import {
+  siClaude,
+  siCss,
+  siGit,
+  siGithub,
+  siHtml5,
+  siJavascript,
+  siJupyter,
+  siKaggle,
+  siKeras,
+  siLinux,
+  siNumpy,
+  siPandas,
+  siPython,
+  siReact,
+  siScikitlearn,
+  siTensorflow,
+  siTypescript,
+} from "simple-icons";
+
+interface ProviderIcon {
+  hex: string;
+  path: string;
+}
+
+const BRAND_LOGOS: Record<string, ProviderIcon> = {
+  Python: siPython,
+  TensorFlow: siTensorflow,
+  Keras: siKeras,
+  "Scikit-learn": siScikitlearn,
+  Pandas: siPandas,
+  NumPy: siNumpy,
+  React: siReact,
+  TypeScript: siTypescript,
+  JavaScript: siJavascript,
+  HTML: siHtml5,
+  CSS: siCss,
+  Git: siGit,
+  GitHub: siGithub,
+  Linux: siLinux,
+  "Claude Code": siClaude,
+  "Jupyter Notebook": siJupyter,
+  Kaggle: siKaggle,
 };
+
+const VS_CODE_LOGO_SRC =
+  "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg";
 
 function getFallback(name: string) {
   const abbreviations: Record<string, string> = {
@@ -38,13 +65,24 @@ function getFallback(name: string) {
 
 export default function SkillLogo({ name }: SkillLogoProps) {
   const logo = BRAND_LOGOS[name];
+  const isVsCode = name === "VS Code";
 
   return (
     <span className="skill-logo-frame" aria-hidden="true">
       <span className="skill-logo-fallback">{getFallback(name)}</span>
       {logo && (
+        <svg
+          className="skill-logo-image"
+          viewBox="0 0 24 24"
+          fill={`#${logo.hex}`}
+          role="presentation"
+        >
+          <path d={logo.path} />
+        </svg>
+      )}
+      {isVsCode && (
         <img
-          src={`https://cdn.simpleicons.org/${logo.slug}/${logo.color}`}
+          src={VS_CODE_LOGO_SRC}
           alt=""
           loading="lazy"
           decoding="async"

@@ -13,22 +13,26 @@ export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-white/10 bg-near-black text-white shadow-[0_8px_30px_rgba(0,0,0,0.12)]">
-      <div className="mx-auto max-w-[1200px] px-4 sm:px-6 md:px-10">
-        <div className="flex items-center justify-between gap-3 py-3 md:py-4">
+    <header className="sticky top-0 z-50 -mb-4 px-3 pt-3 pb-4 text-white sm:px-6">
+      <div
+        className={`mx-auto max-w-[1200px] overflow-hidden border border-white/15 bg-gradient-to-r from-[#2b3931] via-[#131b16] to-[#090d0a] shadow-[0_12px_40px_rgba(0,0,0,0.34),inset_0_1px_0_rgba(255,255,255,0.07)] backdrop-blur-xl transition-[border-radius] duration-300 ${
+          isMenuOpen ? "rounded-[1.75rem]" : "rounded-full"
+        }`}
+      >
+        <div className="flex items-center justify-between gap-3 px-4 py-2.5 sm:px-6 md:px-8 md:py-3">
           <a
             href="#dashboard"
-            className="font-display text-xl font-semibold tracking-[-0.04em] text-white transition-colors duration-200 hover:text-mint sm:text-2xl md:text-[2rem]"
+            className="font-display text-xl font-bold tracking-[-0.045em] text-white transition-colors duration-200 hover:text-mint sm:text-2xl md:text-[1.85rem]"
           >
             Shivahari.
           </a>
 
-          <nav aria-label="Main navigation" className="hidden items-center gap-6 lg:flex xl:gap-8">
+          <nav aria-label="Main navigation" className="hidden items-center gap-5 lg:flex xl:gap-7">
             {NAV_LINKS.map((link) => (
               <a
                 key={link.label}
                 href={link.href}
-                className="font-mono text-xs font-medium tracking-[0.12em] text-white/65 uppercase transition-colors duration-200 hover:text-mint"
+                className="relative py-2 font-body text-[13px] font-semibold tracking-[0.01em] text-white/75 transition-colors duration-200 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:rounded-full after:bg-mint after:transition-all after:duration-300 hover:text-white hover:after:w-full"
               >
                 {link.label}
               </a>
@@ -52,7 +56,7 @@ export default function Navbar() {
 
             <a
               href="#contact"
-              className="inline-flex items-center rounded-full border border-mint bg-mint px-3 py-2 font-mono text-[9px] font-medium tracking-[0.14em] text-near-black uppercase transition-colors duration-200 hover:bg-white sm:px-4 sm:py-2.5 sm:text-[10px] md:px-5 md:text-[11px]"
+              className="inline-flex items-center rounded-full border border-mint/80 bg-mint px-4 py-2.5 font-body text-xs font-bold tracking-[0.01em] text-near-black shadow-[0_4px_16px_rgba(183,228,199,0.16)] transition-all duration-200 hover:-translate-y-0.5 hover:border-white hover:bg-white sm:px-5 sm:text-[13px]"
             >
               Contact
             </a>
@@ -61,17 +65,17 @@ export default function Navbar() {
 
         <nav
           aria-label="Mobile navigation"
-          className={`overflow-hidden border-t border-white/10 bg-near-black transition-all duration-300 lg:hidden ${
+          className={`overflow-hidden bg-transparent transition-all duration-300 lg:hidden ${
             isMenuOpen ? "max-h-80 opacity-100" : "max-h-0 border-t-transparent opacity-0"
           }`}
         >
-          <div className="flex flex-col gap-2 py-3">
+          <div className="mx-3 mb-3 flex flex-col gap-1 border-t border-white/10 pt-3">
             {NAV_LINKS.map((link) => (
               <a
                 key={link.label}
                 href={link.href}
                 onClick={() => setIsMenuOpen(false)}
-                className="font-mono text-[10px] font-medium tracking-[0.16em] text-white/70 uppercase transition-all duration-200 hover:text-mint"
+                className="rounded-lg px-3 py-2.5 font-body text-sm font-semibold tracking-normal text-white/80 transition-colors duration-200 hover:bg-white/8 hover:text-mint"
               >
                 {link.label}
               </a>

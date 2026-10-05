@@ -1,3 +1,5 @@
+import { motion, useReducedMotion } from "motion/react";
+
 const PROFILE_IMAGE_SRC = "/images/profile/shivahari.png";
 
 const DASHBOARD_LINKS = [
@@ -7,6 +9,8 @@ const DASHBOARD_LINKS = [
 ];
 
 export default function Dashboard() {
+  const prefersReducedMotion = useReducedMotion();
+
   function handlePortraitPointerMove(event: React.PointerEvent<HTMLDivElement>) {
     if (
       event.pointerType !== "mouse" ||
@@ -39,25 +43,75 @@ export default function Dashboard() {
 
       <div className="relative mx-auto w-full max-w-[1200px] px-4 sm:px-6 md:px-10">
         <div className="grid items-center gap-8 py-12 sm:gap-12 sm:py-16 md:grid-cols-[1.15fr_1fr] md:gap-16 md:py-24">
-          <div className="hero-copy flex flex-col gap-5 sm:gap-7" data-reveal>
-            <span className="font-mono text-[9px] font-medium tracking-[0.16em] text-forest uppercase sm:text-[10px]">
+          <motion.div
+            className="hero-copy flex flex-col gap-5 sm:gap-7"
+            initial={prefersReducedMotion ? false : "hidden"}
+            animate="visible"
+            variants={{
+              hidden: {},
+              visible: {
+                transition: { staggerChildren: 0.12, delayChildren: 0.1 },
+              },
+            }}
+          >
+            <motion.span
+              className="font-mono text-[9px] font-medium tracking-[0.16em] text-forest uppercase sm:text-[10px]"
+              variants={{
+                hidden: { opacity: 0, y: 18 },
+                visible: {
+                  opacity: 1,
+                  y: 0,
+                  transition: { duration: 0.65, ease: "easeOut" },
+                },
+              }}
+            >
               AI Engineer
-            </span>
+            </motion.span>
 
-            <div className="space-y-2">
+            <motion.div
+              className="space-y-2"
+              variants={{
+                hidden: { opacity: 0, y: 18 },
+                visible: {
+                  opacity: 1,
+                  y: 0,
+                  transition: { duration: 0.7, ease: "easeOut" },
+                },
+              }}
+            >
               <h1 className="font-display text-[clamp(2.9rem,14vw,8.5rem)] leading-[0.86] font-black tracking-[-0.05em] text-near-black">
                 Hi, I'm
                 <br />
                 <span className="not-italic">Shiv.</span>
               </h1>
-            </div>
+            </motion.div>
 
-            <p className="max-w-xl text-sm leading-relaxed text-grey-600 sm:text-base md:text-lg">
+            <motion.p
+              className="max-w-xl text-sm leading-relaxed text-grey-600 sm:text-base md:text-lg"
+              variants={{
+                hidden: { opacity: 0, y: 18 },
+                visible: {
+                  opacity: 1,
+                  y: 0,
+                  transition: { duration: 0.7, ease: "easeOut" },
+                },
+              }}
+            >
               I build thoughtful software, useful AI experiences, and practical ideas
               that feel human — not just clever. If it helps people, I’m in.
-            </p>
+            </motion.p>
 
-            <div className="flex flex-wrap items-center gap-2.5 pt-1 sm:gap-3 sm:pt-2">
+            <motion.div
+              className="flex flex-wrap items-center gap-2.5 pt-1 sm:gap-3 sm:pt-2"
+              variants={{
+                hidden: { opacity: 0, y: 18 },
+                visible: {
+                  opacity: 1,
+                  y: 0,
+                  transition: { duration: 0.7, ease: "easeOut" },
+                },
+              }}
+            >
               {DASHBOARD_LINKS.map((link) => (
                 <a
                   key={link.label}
@@ -77,22 +131,33 @@ export default function Dashboard() {
               >
                 Let’s talk
               </a>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
 
-          <div className="hero-portrait-frame relative flex items-center justify-center md:justify-end" data-reveal>
-            <div
-              className="hero-portrait-stage"
-              onPointerMove={handlePortraitPointerMove}
-              onPointerLeave={resetPortraitTilt}
+          <motion.div
+            className="hero-portrait-frame relative flex items-center justify-center md:justify-end"
+            initial={prefersReducedMotion ? false : { opacity: 0, x: 32, scale: 0.97 }}
+            animate={{ opacity: 1, x: 0, scale: 1 }}
+            transition={{ duration: 0.9, delay: 0.25, ease: "easeOut" }}
+          >
+            <motion.div
+              className="hero-portrait-float"
+              animate={prefersReducedMotion ? undefined : { y: [0, -12, 0] }}
+              transition={{ duration: 5.5, repeat: Infinity, ease: "easeInOut" }}
             >
-              <img
-                src={PROFILE_IMAGE_SRC}
-                alt="Shivahari"
-                className="hero-portrait block h-[clamp(260px,68vw,420px)] w-[clamp(260px,68vw,420px)] object-cover object-center"
-              />
-            </div>
-          </div>
+              <div
+                className="hero-portrait-stage"
+                onPointerMove={handlePortraitPointerMove}
+                onPointerLeave={resetPortraitTilt}
+              >
+                <img
+                  src={PROFILE_IMAGE_SRC}
+                  alt="Shivahari"
+                  className="hero-portrait block h-[clamp(260px,68vw,420px)] w-[clamp(260px,68vw,420px)] object-cover object-center"
+                />
+              </div>
+            </motion.div>
+          </motion.div>
         </div>
       </div>
 
