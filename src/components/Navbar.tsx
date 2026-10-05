@@ -24,14 +24,14 @@ export default function Navbar() {
   return (
     <header className="sticky top-0 z-50 -mb-4 px-3 pt-3 pb-4 text-white sm:px-6">
       <div
-        className={`mx-auto max-w-[1200px] overflow-hidden border border-white/15 bg-gradient-to-r from-[#2b3931] via-[#131b16] to-[#090d0a] shadow-[0_12px_40px_rgba(0,0,0,0.34),inset_0_1px_0_rgba(255,255,255,0.07)] backdrop-blur-xl transition-[border-radius] duration-300 ${
+        className={`mx-auto max-w-[1200px] overflow-hidden border border-white/10 bg-gradient-to-r from-[#101713] via-[#080b09] to-[#030504] shadow-[0_14px_44px_rgba(0,0,0,0.48),inset_0_1px_0_rgba(255,255,255,0.04)] backdrop-blur-xl transition-[border-radius] duration-300 ${
           isMenuOpen ? "rounded-[1.75rem]" : "rounded-full"
         }`}
       >
         <div className="flex items-center justify-between gap-3 px-4 py-2.5 sm:px-6 md:px-8 md:py-3">
           <a
             href="#dashboard"
-            className="font-display text-xl font-bold tracking-[-0.045em] text-white transition-colors duration-200 hover:text-mint sm:text-2xl md:text-[1.85rem]"
+            className="font-display text-xl font-bold tracking-[-0.045em] text-[#ffffff] transition-colors duration-200 hover:text-mint sm:text-2xl md:text-[1.85rem]"
           >
             Shivahari.
           </a>
@@ -41,7 +41,7 @@ export default function Navbar() {
               <a
                 key={link.label}
                 href={link.href}
-                className="relative py-2 font-body text-[13px] font-semibold tracking-[0.01em] text-white/75 transition-colors duration-200 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:rounded-full after:bg-mint after:transition-all after:duration-300 hover:text-white hover:after:w-full"
+                className="relative py-2 font-body text-[13px] font-semibold tracking-[0.01em] text-white transition-colors duration-200 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:rounded-full after:bg-mint after:transition-all after:duration-300 hover:text-white hover:after:w-full"
               >
                 {link.label}
               </a>
@@ -54,7 +54,7 @@ export default function Navbar() {
               aria-label={`Switch to ${theme === "light" ? "dark" : "light"} mode`}
               aria-pressed={theme === "dark"}
               title={`Switch to ${theme === "light" ? "dark" : "light"} mode`}
-              className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-white/15 bg-white/5 text-white/85 transition-all duration-200 hover:border-mint/60 hover:bg-white/10 hover:text-mint focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-mint"
+              className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-white/20 bg-white/[0.07] text-white transition-all duration-200 hover:border-mint/60 hover:bg-white/10 hover:text-mint focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-mint"
               onClick={() => setTheme((current) => current === "light" ? "dark" : "light")}
             >
               {theme === "light" ? (
@@ -74,7 +74,7 @@ export default function Navbar() {
               type="button"
               aria-label="Toggle navigation menu"
               aria-expanded={isMenuOpen}
-              className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/20 bg-white/5 text-white transition-colors duration-200 hover:border-mint lg:hidden"
+              className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/20 bg-white/[0.07] text-white transition-colors duration-200 hover:border-mint lg:hidden"
               onClick={() => setIsMenuOpen((prev) => !prev)}
             >
               <span className="flex flex-col gap-1.5">
@@ -105,7 +105,7 @@ export default function Navbar() {
                 key={link.label}
                 href={link.href}
                 onClick={() => setIsMenuOpen(false)}
-                className="rounded-lg px-3 py-2.5 font-body text-sm font-semibold tracking-normal text-white/80 transition-colors duration-200 hover:bg-white/8 hover:text-mint"
+                className="rounded-lg px-3 py-2.5 font-body text-sm font-semibold tracking-normal text-white transition-colors duration-200 hover:bg-white/8 hover:text-mint"
               >
                 {link.label}
               </a>

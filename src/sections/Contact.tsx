@@ -22,8 +22,8 @@ export default function Contact() {
       <div className="section-panel mx-auto w-full max-w-[1200px] px-4 py-20 sm:px-6 md:px-10 md:py-32">
         <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:gap-20">
           <div className="flex flex-col gap-5" data-reveal>
-            <span className="font-mono text-[10px] tracking-[0.18em] text-mint uppercase sm:text-xs">
-              06 — Contact
+            <span className="font-body text-sm font-semibold tracking-[0.12em] text-mint uppercase sm:text-base">
+              Contact
             </span>
             <h2 className="font-display text-[clamp(2.4rem,8vw,4.5rem)] font-bold leading-[1.02] tracking-[-0.05em] text-white">
               Have an idea?
@@ -48,7 +48,7 @@ export default function Contact() {
             className="flex flex-col gap-5 rounded-[1.5rem] border border-white/10 bg-near-black/35 p-5 shadow-[0_24px_80px_rgba(0,0,0,0.18)] sm:p-8"
           >
             <div className="flex flex-col gap-2">
-              <label htmlFor="contact-email" className="font-mono text-[10px] tracking-[0.14em] text-white/75 uppercase">
+              <label htmlFor="contact-email" className="font-body text-sm font-semibold tracking-[0.01em] text-white/85">
                 Your email
               </label>
               <input
@@ -58,12 +58,12 @@ export default function Contact() {
                 autoComplete="email"
                 placeholder="you@example.com"
                 required
-                className="w-full rounded-xl border border-white/15 bg-white/[0.06] px-4 py-3 text-sm text-white placeholder:text-white/35 transition-colors focus:border-mint focus:outline-none"
+                className="w-full rounded-xl border border-white/15 bg-white/[0.06] px-4 py-3.5 font-body text-base text-white placeholder:text-white/40 transition-colors focus:border-mint focus:outline-none"
               />
             </div>
 
             <div className="flex flex-col gap-2">
-              <label htmlFor="contact-message" className="font-mono text-[10px] tracking-[0.14em] text-white/75 uppercase">
+              <label htmlFor="contact-message" className="font-body text-sm font-semibold tracking-[0.01em] text-white/85">
                 Your message
               </label>
               <textarea
@@ -72,14 +72,14 @@ export default function Contact() {
                 rows={5}
                 placeholder="What would you like to build together?"
                 required
-                className="w-full resize-y rounded-xl border border-white/15 bg-white/[0.06] px-4 py-3 text-sm leading-relaxed text-white placeholder:text-white/35 transition-colors focus:border-mint focus:outline-none"
+                className="w-full resize-y rounded-xl border border-white/15 bg-white/[0.06] px-4 py-3.5 font-body text-base leading-relaxed text-white placeholder:text-white/40 transition-colors focus:border-mint focus:outline-none"
               />
             </div>
 
             <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
               <button
                 type="submit"
-                className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-mint px-6 py-3 font-mono text-[10px] font-semibold tracking-[0.14em] text-near-black uppercase transition-all duration-200 hover:-translate-y-0.5 hover:bg-white"
+                className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-mint px-6 py-3 font-body text-sm font-bold tracking-[0.01em] text-near-black transition-all duration-200 hover:-translate-y-0.5 hover:bg-white"
               >
                 Prepare email <span aria-hidden="true">↗</span>
               </button>

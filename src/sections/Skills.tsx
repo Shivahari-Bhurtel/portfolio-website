@@ -7,9 +7,6 @@ export default function Skills() {
       <div className="section-panel mx-auto w-full max-w-[1200px] px-4 py-20 sm:px-6 md:px-10 md:py-32">
         <div className="flex flex-col gap-10 md:gap-12">
           <div className="flex flex-col gap-4" data-reveal>
-            <span className="font-mono text-xs font-semibold tracking-[0.18em] text-grey-600 uppercase sm:text-sm">
-              04 — Skills
-            </span>
             <h2 className="font-display text-[clamp(2.5rem,8vw,3.75rem)] leading-[1.05] font-black text-near-black">
               Skills I keep building.
             </h2>

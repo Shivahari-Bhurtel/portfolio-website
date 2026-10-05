@@ -7,14 +7,11 @@ export default function Certificates() {
       <div className="section-panel mx-auto w-full max-w-[1200px] px-4 py-20 sm:px-6 md:px-10 md:py-32">
         <div className="flex flex-col gap-10 md:gap-12">
           <div className="flex flex-col gap-4" data-reveal>
-            <span className="font-mono text-[10px] tracking-[0.18em] text-grey-600 uppercase sm:text-xs">
-              02 — Learning
-            </span>
             <h2 className="font-display text-[clamp(2.1rem,8vw,3rem)] leading-[1.1] font-black text-near-black">
               Certificates.
             </h2>
             <p className="max-w-2xl text-sm leading-relaxed text-grey-500">
-              A few milestones from my ongoing learning in AI, programming, and developer tools.
+              Selected credentials in AI, programming, and developer tools.
             </p>
           </div>
 

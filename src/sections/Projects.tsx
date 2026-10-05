@@ -10,10 +10,7 @@ export default function Projects() {
       <div className="section-panel mx-auto w-full max-w-[1200px] px-4 py-20 sm:px-6 md:px-10 md:py-28">
         <div className="mb-10 flex flex-col gap-6 sm:mb-14 xl:flex-row xl:items-end xl:justify-between">
           <div className="max-w-2xl" data-reveal>
-            <span className="font-mono text-[10px] tracking-[0.18em] text-forest uppercase sm:text-xs">
-              03 — Selected work
-            </span>
-            <h2 className="mt-4 font-display text-[clamp(2.4rem,7vw,4.5rem)] font-bold leading-[1.02] tracking-[-0.05em] text-near-black">
+            <h2 className="font-display text-[clamp(2.4rem,7vw,4.5rem)] font-bold leading-[1.02] tracking-[-0.05em] text-near-black">
               Built with purpose.
               <br />
               <span className="text-forest">Made to matter.</span>
